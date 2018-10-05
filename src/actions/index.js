@@ -2,8 +2,9 @@
 import axios from 'axios';
 
 const API_KEY = '09145dd6a4a835cf8a8c2cc42950d6aa';
+const ROOT_URL =  `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+// Above without template strings.
 // const URL = 'https://samples.openweathermap.org/data/2.5/forecast?appid=' + API_KEY;
-const ROOT_URL = `https://samples.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 // Define variable (FETCH_WEATHER) AND
 // ASSIGNED A STRING
@@ -12,19 +13,20 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 
 // action
 export function fetchWeather(city) {
-	const url = `${ROOT_URL}&q=${city},dk`;
+	// below-- a crafted url with the city
+	const url = `${ROOT_URL}&q=${city},us`;
 	const request = axios.get(url);
+	// axios rerurns a promise but the promise doesn't
+	// contain the data.
+
+	// console.log('Request:' request);
+
 	return {
 		type: FETCH_WEATHER,
 		payload: request
 	};
 }
-
-// const url = `${ROOT_URL}&q=${city},dk`;
-	// const request = axios.get{url};
-	// .get{url} the url is the const defined above.
-
-// USE BELOW IF THE DK DOESN'T WORK
-// making request url
-//	const url = `${ROOT_URL}&q=${city},us`
+// we are returing the payload as the promise.
+	// const request = axios.get{url}
+	// the url is the const defined above.
 
