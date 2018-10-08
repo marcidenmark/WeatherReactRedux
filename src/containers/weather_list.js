@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+
 import Chart from '../components/chart';
+import GoogleMap from '../components/google_map';
 // Sparklines is parent, SparklinesLine is child
-// import { actionName } from '../actions/index';
 //
 class WeatherList extends Component {
 	renderWeather(cityData) {
@@ -11,14 +11,21 @@ class WeatherList extends Component {
 		const temps = cityData.list.map(weather => weather.main.temp);
 		const pressures = cityData.list.map(weather => weather.main.pressure);
 		const humidities = cityData.list.map(weather => weather.main.humidity);
+		const { lon, lat } = cityData.city.coord;
+		// means find the coord obj. grab the lon and lat props and assign to 2 new
+		// variables, lon and lat. same as below 2 lines:
+		//
+		// const lon = cityData.city.coord.lon;
+		// const lat = cityData.city.coord.lat;
+		//
 		// console.log(temps);
 		// (td = table data)
 		return (
 			<tr key={name}>
-				<td>{name}</td>
-					<td> <Chart data={temps} color="orange" units="K" /> </td>
-					<td> <Chart data={pressures} color="blue" units="hPa" /> </td>
-					<td> <Chart data={humidities} color="black"units="%" /> </td>
+				<td> <GoogleMap lon={lon} lat={lat} /></td>
+				<td> <Chart data={temps} color="orange" units="K" /></td>
+				<td> <Chart data={pressures} color="blue" units="hPa" /></td>
+				<td> <Chart data={humidities} color="black"units="%" /></td>
 			</tr>
 			);
 	}
