@@ -19,8 +19,8 @@ export function fetchWeather(city) {
 	// axios rerurns a promise but the promise doesn't
 	// contain the data.
 
-	// console.log('Request:' request);
-
+	// console.log('THIS IS MY STRING TO LABEL MY request. THIS IS THE CONSOLE.LOG RESPONSE:',request);
+	// // shows the city after entered in the search bar
 	return {
 		type: FETCH_WEATHER,
 		payload: request

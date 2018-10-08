@@ -22,7 +22,7 @@ class SearchBar extends Component {
 	onFormSubmit(event) {
 		event.preventDefault();
 		this.props.fetchWeather(this.state.term);
-		this.setState({ term: '' });
+		// this.setState({ term: '' });
 	}
 // (fetchWather is the the action creator)
 // line 25 makes the search bar field be empty again after completing a search
