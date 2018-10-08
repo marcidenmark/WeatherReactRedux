@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Sparklines, SparklinesLine } from 'react-sparklines';
+// Sparklines is parent, SparklinesLine is child
 // import { actionName } from '../actions/index';
 //
 class WeatherList extends Component {
@@ -11,6 +13,11 @@ class WeatherList extends Component {
 		return (
 			<tr key={name}>
 				<td>{name}</td>
+				<td>
+					<Sparklines height={120} width={180} data={temps}>
+						<SparklinesLine color={"red"} />
+					</Sparklines>
+				</td>
 			</tr>
 			);
 	}
