@@ -10,6 +10,11 @@ export default function (state = [], action) {
 	}
 	return state;
 }
+
+// we do line 7 in order to create a new array, and a new state/a new array.
+// This must be done. Changing the state of the state as in updating it
+//  should not be done. So no .push...
+//
 // state is the name of the array.
 // question 1 to answer-- what should our data structure be.
 // fetch weather action type switch statement

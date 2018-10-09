@@ -1,4 +1,5 @@
 // ACTIONS FOLDER INDEX.JS
+// this is an action creator to fetch the weather.
 import axios from 'axios';
 
 const API_KEY = '09145dd6a4a835cf8a8c2cc42950d6aa';
@@ -30,3 +31,4 @@ export function fetchWeather(city) {
 	// const request = axios.get{url}
 	// the url is the const defined above.
 
+// this is an action creator to fetch the weather.

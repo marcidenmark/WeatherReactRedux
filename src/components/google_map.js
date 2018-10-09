@@ -12,15 +12,15 @@ class GoogleMap extends Component {
 	}
 
 	render() {
-		return <div ref="map" />
+		return <div ref="map" />;
 	}
 }
 
 export default GoogleMap;
  //"prop ref"
  //in React ref is short for reference
- //html element on page
+ //html dom element on page
 // this.refs.map
 // an object with 2 properties
-// (this.refs.map, =>>> is a node.
+// (this.refs. =>>> is a node.
 // This compoent is an example of working with 3rd party libraries and React
